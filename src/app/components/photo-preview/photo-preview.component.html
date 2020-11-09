@@ -1,0 +1,35 @@
+<div id="contenedor" *ngIf="!foto; else fotico">
+    <div id="barra">
+        <div id="texto"></div>
+    </div>
+</div>
+
+<ng-template #fotico>
+    <div class="row">
+        <div class="col-md-7">
+            <div class="card">
+                <img [src]="'http://localhost:9000/' + foto.imagePath" class="img-fluid">
+            </div>
+            <button class="btn btn-outline-danger btn-block mb-3" (click)="delete(foto._id)">Delete</button>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <form class="card-body" (submit)="update(title,description)">
+                    <h5>Edit info</h5>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Title" [value]="foto.title" #title>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-group" cols="30" rows="2" placeholder="Description"
+                            [value]="foto.description" #description></textarea>
+                    </div>
+                    <button class="btn btn-outline-success btn-block">
+                        Update
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</ng-template>

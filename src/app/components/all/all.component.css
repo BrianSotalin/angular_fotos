@@ -1,0 +1,10 @@
+h6{
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+.card{
+    cursor: pointer;
+}
+.card:hover{
+    border: gray;
+}

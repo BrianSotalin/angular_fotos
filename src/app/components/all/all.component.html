@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-4 p-4" *ngFor="let photo of photos" (click)="cursorPhoto(photo._id)">
+        <div class="card bg-light border-primary mb-3">
+            <div class="card-header ">
+                <h6 class="text-primary text-align text-center">{{photo.title}}</h6>
+            </div>
+            <img [src]="'http://localhost:9000/' + photo.imagePath" class="img-card-top w-100">
+            <div class="card-body">
+                <em> {{photo.description}}</em>
+            </div>
+        </div>
+    </div>
+</div>

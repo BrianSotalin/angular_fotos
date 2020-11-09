@@ -1,0 +1,31 @@
+<div class="card border-primary mb-3 mx-auto" style="max-width: 20rem;">
+    <div class="card">
+        <div class="card-header text-primary text-align text-center">
+            <h5>Upload photo</h5>
+        </div>
+        <div class="card-body">
+            <form (submit)="uploadFoto(title, description)">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Title" required #title>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="Description" required #description></textarea>
+                </div>
+               
+                <input type="file" class="d-none" (change)="photoEvento($event)" #cambiarPhoto>
+                <img [src]="photoUp || 'assets/nofoto.png'" class="img-fluid" alt="" (click)="cambiarPhoto.click()">
+               
+                <div class="form-group">
+                    <button class="btn btn-outline-primary btn-block p-2">
+                        <h5>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/>
+                              </svg>
+                        </h5>
+                       </button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
